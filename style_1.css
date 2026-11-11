@@ -1,0 +1,726 @@
+﻿:root {
+  --velvet-dark: #2a0509;   /* фон страницы */
+  --velvet: #4a0a14;        /* тёмные карточки */
+  --wine: #6e1020;          /* яркая бордовая карточка */
+  --wine-light: #8c1d2e;    /* акцентные плашки */
+  --cream: #f3e6d3;         /* светлые карточки */
+  --cream-deep: #e6d2b5;    /* вложенные элементы на светлом */
+  --gold: #d9b98a;          /* акцент: линии, кнопки */
+  --ink: #2b0a0e;           /* текст на светлом */
+  --text-on-dark: #f3e6d3;  /* текст на тёмном */
+  --r-lg: 28px;
+  --r-md: 20px;
+  --r-sm: 12px;
+  --gap: 20px;
+
+  --serif: "Didot", "Bodoni MT", "Playfair Display", "Times New Roman", Georgia, serif;
+  --sans: "Segoe UI", Tahoma, Arial, Helvetica, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: var(--velvet-dark);
+  color: var(--text-on-dark);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.clear {
+  display: none;
+}
+
+/* ===== Каркас ===== */
+#site-container {
+  background: transparent;
+  min-height: 100%;
+}
+
+#hFooter {
+  height: 90px;
+}
+
+#footer {
+  background: var(--velvet);
+  color: var(--gold);
+  height: 70px;
+  margin: -70px 10px 10px;
+  line-height: 70px;
+  text-align: center;
+  font-size: 14px;
+  border-radius: var(--r-md);
+}
+
+/* ===== Шапка ===== */
+#header-container {
+  width: 100%;
+  padding: 14px 10px 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+#header {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 12px 18px;
+  height: auto;
+  position: static;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 20px;
+  background: var(--velvet);
+  border-radius: var(--r-lg);
+}
+
+#logo {
+  position: static;
+  transform: none;
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 22px;
+  background: var(--gold);
+  color: var(--velvet-dark);
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: var(--r-sm);
+}
+
+#logo:hover {
+  text-decoration: none;
+  background: var(--cream);
+}
+
+#main-nav {
+  position: static;
+  transform: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+}
+
+#main-nav a {
+  margin: 0;
+  padding: 6px 12px;
+  color: var(--text-on-dark);
+  font-size: 14px;
+  white-space: nowrap;
+  border-radius: 999px;
+}
+
+#main-nav a:hover {
+  background: var(--wine-light);
+  color: var(--cream);
+  text-decoration: none;
+}
+
+/* ===== Основной блок ===== */
+#main-block {
+  width: 100%;
+  max-width: 960px;
+  margin: var(--gap) auto 0;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+/* Колонки сами не имеют фона — карточки лежат отдельно */
+#content-column {
+  width: 100%;
+  min-height: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+#side-column {
+  width: 100%;
+  min-height: 0;
+  background: var(--cream);
+  color: var(--ink);
+  border-radius: var(--r-lg);
+  padding: 10px 6px 20px;
+  box-shadow: none;
+}
+
+#side-column h2 {
+  margin: 16px 18px 6px;
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 26px;
+  color: var(--wine);
+  text-transform: uppercase;
+}
+
+#side-column p {
+  margin: 4px 18px 10px;
+}
+
+#side-column a {
+  color: var(--wine);
+}
+
+#side-column #quick-form {
+  margin: 10px 14px 0;
+  padding: 16px;
+  background: var(--cream-deep);
+  border-radius: var(--r-md);
+}
+
+/* ===== Общие стили секций (каждая — карточка) ===== */
+section {
+  padding: 26px 22px;
+  border-radius: var(--r-lg);
+  background: var(--cream);
+  color: var(--ink);
+}
+
+section h2 {
+  display: inline-block;
+  margin: 0 0 18px;
+  padding-bottom: 8px;
+  font-family: var(--serif);
+  font-size: 24px;
+  line-height: 1.15;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--wine);
+  border-bottom: 2px solid var(--gold);
+}
+
+#content-column p {
+  margin: 10px 0;
+}
+
+/* ===== Hero — тёмная карточка ===== */
+.hero {
+  background: var(--velvet);
+  color: var(--text-on-dark);
+  padding: 44px 24px;
+  text-align: center;
+  border-radius: var(--r-lg);
+}
+
+#content-column .hero h1 {
+  margin: 0 0 14px;
+  font-family: var(--serif);
+  font-size: 32px;
+  line-height: 1.1;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+
+#content-column .hero p {
+  margin: 0 auto 24px;
+  max-width: 520px;
+  font-size: 16px;
+  color: var(--gold);
+}
+
+/* ===== Кнопки ===== */
+.btn {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--velvet-dark);
+  padding: 13px 28px;
+  border: none;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+
+.btn:hover {
+  background: var(--cream);
+  text-decoration: none;
+}
+
+.btn:focus-visible,
+form input:focus-visible,
+form select:focus-visible,
+form textarea:focus-visible,
+#main-nav a:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* ===== Галерея — квадратные скруглённые плитки ===== */
+.portfolio {
+  background: var(--cream);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.gallery-item {
+  aspect-ratio: 1 / 1;
+  height: auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--velvet);
+  color: var(--gold);
+  font-weight: bold;
+  border: 2px solid var(--gold);
+  border-radius: var(--r-md);
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+}
+
+/* ===== Тарифы — светлая карточка, строки-плашки ===== */
+.services-list {
+  list-style: none;
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.services-list li {
+  padding: 14px 18px;
+  background: var(--cream-deep);
+  border: none;
+  border-radius: var(--r-sm);
+}
+
+.services-list li:last-child {
+  border-bottom: none;
+}
+
+.services-list strong {
+  color: var(--wine);
+}
+
+/* ===== Отзывы — бордовая карточка ===== */
+.reviews {
+  background: var(--wine);
+  color: var(--text-on-dark);
+}
+
+.reviews h2 {
+  color: var(--cream);
+  border-bottom-color: var(--gold);
+}
+
+.review {
+  background: var(--velvet);
+  border: none;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  border-radius: var(--r-md);
+}
+
+.review:last-child {
+  margin-bottom: 0;
+}
+
+#content-column .review p {
+  margin: 0 0 8px;
+  font-style: italic;
+}
+
+.review span {
+  font-size: 13px;
+  color: var(--gold);
+}
+
+/* ===== Видео — светлая карточка ===== */
+.video-wrap {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--r-md);
+  margin-top: 6px;
+  background: var(--velvet-dark);
+}
+
+.video-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ===== Таймер — тёмная карточка ===== */
+.timer-block {
+  background: var(--velvet);
+  color: var(--text-on-dark);
+  border-radius: var(--r-lg);
+  margin: 0;
+}
+
+.timer-block h2 {
+  color: var(--cream);
+  border-bottom-color: var(--gold);
+}
+
+.timer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.timer > div {
+  background: var(--wine);
+  border-radius: var(--r-md);
+  padding: 14px 10px;
+  min-width: 78px;
+  text-align: center;
+}
+
+.timer span {
+  display: block;
+  font-family: var(--serif);
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--gold);
+}
+
+.timer small {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+
+/* ===== Формы ===== */
+.order {
+  background: var(--cream);
+}
+
+form label {
+  display: block;
+  margin-bottom: 14px;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--wine);
+}
+
+form input,
+form select,
+form textarea {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 11px 14px;
+  background: #fff8ee;
+  color: var(--ink);
+  border: 1px solid var(--gold);
+  border-radius: var(--r-sm);
+  font-size: 14px;
+  font-family: inherit;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--wine);
+}
+
+.order .btn,
+#quick-form .btn {
+  background: var(--wine);
+  color: var(--cream);
+}
+
+.order .btn:hover,
+#quick-form .btn:hover {
+  background: var(--velvet);
+}
+
+.form-message {
+  margin-top: 12px;
+  font-weight: bold;
+  color: var(--wine);
+}
+
+/* ===== Планшеты ===== */
+@media (min-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #content-column .hero h1 {
+    font-size: 44px;
+  }
+
+  section h2 {
+    font-size: 28px;
+  }
+}
+
+/* ===== Десктоп: две колонки ===== */
+@media (min-width: 960px) {
+  #main-block {
+    display: grid;
+    grid-template-columns: 1fr 290px;
+    align-items: start;
+    padding: 0;
+  }
+
+  #side-column {
+    position: sticky;
+    top: var(--gap);
+  }
+
+  #content-column .hero h1 {
+    font-size: 52px;
+  }
+
+  section {
+    padding: 30px 28px;
+  }
+
+  .timer {
+    gap: 20px;
+  }
+
+  .timer > div {
+    min-width: 96px;
+  }
+}
+
+/* Уважение к настройке «меньше анимации» */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+/* ================= CSS3: расширения для продающей страницы ================= */
+
+/* @font-face: подключение шрифта (локальный, с запасными вариантами) */
+@font-face {
+  font-family: "FotoSerif";
+  src: local("Playfair Display"), local("Didot"), local("Bodoni MT");
+  font-display: swap;
+}
+:root { --serif: "FotoSerif", "Times New Roman", Georgia, serif; }
+
+/* HSL-цвета */
+:root {
+  --glow: hsl(38, 55%, 68%);
+  --wine-hsl: hsl(351, 78%, 25%);
+}
+
+/* Градиенты: радиальный на фоне, линейные на карточках и кнопках */
+body {
+  background:
+    radial-gradient(circle at 15% 0%, hsl(350, 70%, 20%) 0%, transparent 45%),
+    radial-gradient(circle at 100% 100%, hsl(350, 75%, 14%) 0%, transparent 50%),
+    var(--velvet-dark);
+  background-attachment: fixed;
+}
+.hero {
+  background: linear-gradient(135deg, hsl(352, 80%, 14%) 0%, var(--wine) 100%);
+  box-shadow: 0 10px 30px rgba(0,0,0,.45), inset 0 0 40px rgba(0,0,0,.35);
+}
+.btn { background: linear-gradient(180deg, hsl(38, 60%, 78%), var(--gold)); }
+.btn:hover { background: var(--cream); }
+.order .btn, #quick-form .btn { background: linear-gradient(180deg, var(--wine-light), var(--wine)); }
+
+/* text-shadow (в т.ч. несколько теней) */
+#content-column .hero h1 {
+  text-shadow: 2px 2px 2px hsl(351, 80%, 10%), 0 0 18px hsla(38, 60%, 70%, .45);
+}
+.timer span { text-shadow: 0 0 12px hsla(38, 70%, 70%, .6); }
+
+/* border-radius: разные значения для разных углов */
+#header { border-radius: var(--r-lg) var(--r-lg) var(--r-lg) 6px; }
+.review { border-radius: var(--r-md) var(--r-md) var(--r-md) 4px; }
+.gallery-item:nth-child(odd)  { border-radius: var(--r-md) 4px var(--r-md) 4px; }
+.gallery-item:nth-child(even) { border-radius: 4px var(--r-md) 4px var(--r-md); }
+
+/* box-shadow: внешние и внутренние */
+section, #side-column, #header, #footer { box-shadow: 0 8px 22px rgba(0,0,0,.35); }
+.services-list li { box-shadow: inset 0 0 8px rgba(110,16,32,.18); }
+form input, form select, form textarea { box-shadow: inset 1px 2px 5px rgba(110,16,32,.18); }
+.timer > div { box-shadow: 0 4px 12px rgba(0,0,0,.4), inset 0 0 10px rgba(0,0,0,.3); }
+.gallery-item { box-shadow: 0 6px 14px rgba(0,0,0,.4); }
+
+/* transition: плавные эффекты при наведении */
+.gallery-item img { transition: transform .5s ease; }
+.gallery-item:hover img { transform: scale(1.12); }
+.gallery-item { transition: box-shadow .3s, border-color .3s; }
+.gallery-item:hover { border-color: var(--cream); box-shadow: 0 10px 24px rgba(217,185,138,.35); }
+.services-list li { transition: background-color .3s, transform .3s; }
+.services-list li:hover { background-color: hsl(36, 45%, 82%); transform: translateX(6px); }
+.review { transition: background-color .3s; }
+.review:hover { background-color: hsl(351, 78%, 18%); }
+.btn { transition: background .3s, color .3s, box-shadow .3s; }
+.btn:hover { box-shadow: 0 0 18px hsla(38, 70%, 70%, .6); }
+form input, form select, form textarea { transition: border-color .3s, box-shadow .3s; }
+
+/* columns: текст в несколько столбцов */
+.benefits-text { column-gap: 40px; column-rule: 2px dotted var(--gold); }
+.benefits-text p { margin: 0 0 14px; break-inside: avoid; }
+.benefits-text strong { color: var(--wine); }
+@media (min-width: 768px) { .benefits-text { column-count: 2; } }
+
+/* ================= Версия 3 ================= */
+
+/* Фон: кружево в двух противоположных углах, букет; тёмный бордовый градиент (как раньше) */
+body {
+  background:
+    url("lace_corner.png") left top / min(420px, 60vw) auto no-repeat,
+    url("lace_corner_br.png") right bottom / min(420px, 60vw) auto no-repeat,
+    url("flowers.png") right 20px top 90px / min(560px, 90vw) auto no-repeat,
+    radial-gradient(circle at 15% 0%, hsl(350, 70%, 20%) 0%, transparent 45%),
+    radial-gradient(circle at 100% 100%, hsl(350, 75%, 14%) 0%, transparent 50%),
+    var(--velvet-dark);
+  background-attachment: fixed;
+}
+
+/* Градиент у каждого блока */
+#header, #footer { background: linear-gradient(135deg, hsl(352, 75%, 22%), hsl(352, 80%, 12%)); }
+.portfolio, .services, .video-block, .order, .benefits, #side-column {
+  background: linear-gradient(160deg, hsl(36, 55%, 92%) 0%, hsl(36, 40%, 80%) 100%);
+}
+.reviews { background: linear-gradient(135deg, hsl(351, 70%, 36%) 0%, hsl(351, 80%, 20%) 100%); }
+.timer-block { background: linear-gradient(135deg, hsl(352, 75%, 22%) 0%, hsl(352, 85%, 10%) 100%); }
+.services-list li, #side-column #quick-form {
+  background: linear-gradient(180deg, hsl(36, 50%, 90%), hsl(36, 38%, 78%));
+}
+.review { background: linear-gradient(135deg, hsl(352, 75%, 20%), hsl(352, 80%, 13%)); }
+.timer > div { background: linear-gradient(180deg, hsl(351, 70%, 32%), hsl(351, 80%, 20%)); }
+
+/* Цветы на блоках — копия фона в уменьшенном виде (в углу) */
+section, #side-column { position: relative; overflow: hidden; }
+section::after, #side-column::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    url("red_hibiscus.png") right 10px top 8px / 64px auto no-repeat,
+    url("red_lily.png") left 8px bottom 6px / 64px auto no-repeat;
+  opacity: .95;
+  pointer-events: none;
+}
+
+section > *, #side-column > * { position: relative; z-index: 1; }
+
+/* Заголовки блоков: в светлых — светлая подсветка, в тёмных — тёмная */
+section h2, #side-column h2 {
+  text-shadow: 0 1px 0 hsl(40, 80%, 97%), 0 0 10px hsl(40, 90%, 95%);
+}
+.reviews h2, .timer-block h2, .hero h1 {
+  text-shadow: 0 2px 3px hsl(352, 90%, 6%), 0 0 12px hsl(352, 90%, 8%);
+}
+
+/* Кнопки: «выпуклые», при нажатии вдавливаются */
+.btn {
+  box-shadow: 0 5px 0 hsl(36, 40%, 48%), 0 8px 12px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.5);
+  transform: translateY(0);
+  transition: transform .08s, box-shadow .08s, background .3s;
+}
+.order .btn, #quick-form .btn {
+  box-shadow: 0 5px 0 hsl(351, 80%, 12%), 0 8px 12px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.25);
+}
+.btn:active {
+  transform: translateY(5px);
+  box-shadow: inset 0 4px 8px rgba(0,0,0,.5), 0 0 0 hsl(36, 40%, 48%);
+}
+.order .btn:active, #quick-form .btn:active {
+  box-shadow: inset 0 4px 10px rgba(0,0,0,.6);
+}
+
+/* Выбор услуги: скруглённые края */
+form select {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 999px;
+  padding: 11px 44px 11px 20px;
+  cursor: pointer;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%236e1020' stroke-width='2'/%3E%3C/svg%3E") right 18px center / 14px 9px no-repeat,
+    #fff8ee;
+}
+form select option { border-radius: 12px; padding: 8px 14px; }
+
+/* Заголовки блоков в стиле макета: антиква, разрядка, короткая линия по центру */
+section h2, #side-column h2 {
+  display: block;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 22px;
+  letter-spacing: .18em;
+  text-align: center;
+  border-bottom: 0;
+  padding-bottom: 14px;
+  margin: 0 0 18px;
+  position: relative;
+}
+#side-column h2 { margin: 16px 18px 12px; font-size: 17px; }
+section h2::after, #side-column h2::after {
+  content: "";
+  position: absolute; left: 50%; bottom: 0;
+  width: 44px; height: 2px; margin-left: -22px;
+  background: currentColor; opacity: .7;
+}
+@media (min-width: 768px) { section h2 { font-size: 26px; } }
+/* Кружево фона не должно мешать: слегка приглушаем ниже цветов */
+
+/* Кнопки без объёма: плоские, без теней и сдвига */
+.btn, .btn:hover, .btn:active,
+.order .btn, .order .btn:hover, .order .btn:active,
+#quick-form .btn, #quick-form .btn:hover, #quick-form .btn:active {
+  box-shadow: none;
+  transform: none;
+}
+.btn { background: var(--gold); }
+.btn:hover { background: var(--cream); }
+.order .btn, #quick-form .btn { background: var(--wine); }
+.order .btn:hover, #quick-form .btn:hover { background: var(--velvet); }
+
+/* Плавная прокрутка и отступ сверху у блоков-якорей */
+html { scroll-behavior: smooth; }
+section { scroll-margin-top: 20px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

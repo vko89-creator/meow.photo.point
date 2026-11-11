@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+<title>Фото.точка</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Курсы по обучению фотосъёмке" />
+<meta name="keywords" content="фотография, курс, съёмка, обучение, уроки" />
+<link type="text/css" href="style_1.css" rel="stylesheet"
+media="screen" />
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+<div id="site-container">
+
+<!-- ШАПКА С ЛОГОТИПОМ -->
+<div id="header-container">
+<div id="header">
+<a href="/" id="logo">Курсы</a>
+<nav id="main-nav">
+<a href="#about">Фотография</a>
+<a href="#services">О курсах</a>
+<a href="#reviews">Отзывы</a>
+<a href="#video">Видео</a>
+<a href="#order">Зарегистрироваться</a>
+</nav>
+</div>
+</div>
+
+<!-- ОСНОВНОЙ БЛОК -->
+<div id="main-block">
+<!-- Контентная колонка -->
+<div id="content-column">
+<!-- Hero / первый экран -->
+<section class="hero" id="about">
+<h1>Лучшие фото в ваших руках</h1>
+<p>Обучение профессиональной фотосъёмке с нуля. </p>
+<a class="btn" href="#order">Записаться на курс</a>
+</section>
+
+<!-- Фотография (изображения) -->
+<section class="portfolio">
+<h2>Работы учеников</h2>
+<div class="gallery">
+    <div class="gallery-item"><img src="portrait.jpg" alt="Портрет"></div>
+    <div class="gallery-item"><img src="landscape.jpg" alt="Пейзаж"></div>
+    <div class="gallery-item"><img src="stilllife.jpg" alt="Натюрморт"></div>
+    <div class="gallery-item"><img src="macro.jpg" alt="Макросъемка"></div>
+    <div class="gallery-item"><img src="achitecture.jpg" alt="Архитектура"></div>
+    <div class="gallery-item"><img src="report.jpg" alt="Репортаж"></div>
+</div>
+</section>
+
+<!-- Преимущества (CSS3 columns) -->
+<section class="benefits">
+<h2>Почему выбирают нас</h2>
+<div class="benefits-text">
+<p><strong>Практика с первого занятия.</strong> Вы снимаете каждую неделю и получаете разбор кадров от преподавателя.</p>
+<p><strong>Небольшие группы.</strong> До восьми человек: у наставника есть время на каждого.</p>
+<p><strong>Без опыта.</strong> Начинаем с настроек камеры и света, сложное добавляем постепенно.</p>
+<p><strong>Своё портфолио.</strong> К концу курса у вас готовая серия работ для показа заказчикам.</p>
+</div>
+</section>
+
+<!-- О курсах -->
+<section class="services" id="services">
+<h2>Тарифы и цены</h2>
+<ul class="services-list">
+<li><strong>Основы фотографии</strong> — 6 000 ₽ / 3 месяца</li>
+<li><strong>Портретная съёмка</strong> — 10 000 ₽ / 6 месяцев</li>
+<li><strong>Пейзажная фотография</strong> — 7 000 ₽ / 4 месяца</li>
+<li><strong>Натюрморт+Макросъёмка</strong> — 12 000 ₽ / 9 месяцев</li>
+<li><strong>Репортаж+Архитектурная фотография</strong> — 20 000 ₽ / 12 месяцев</li>
+</ul>
+</section>
+
+<!-- Отзывы -->
+<section class="reviews" id="reviews">
+ <h2>Отзывы учеников</h2>
+
+<div class="review">
+<p>«Очень тёплая атмосфера на курсе. Очень понравилось учиться!»</p>
+<span>— Элина, портретная съёмка</span>
+</div>
+
+<div class="review">
+<p>«Каждый урок был пропитан особым вайбом. Спасибо за эмоции!»</p>
+<span>— Катя, натюрморт+макросъёмка</span>
+</div>
+
+<div class="review">
+<p>«Прошёл курс по фотографии — наконец-то разобрался с ручными настройками.»</p>
+<span>— Матвей, основы фотографии</span>
+</div>
+</section>
+
+ <!-- Видео -->
+<section class="video-block" id="video">
+<h2>Пробный урок</h2>
+<div class="video-wrap">
+<iframe src="https://rutube.ru/play/embed/fd4a4be29f98f00c16db1d6aa47fd3e5/?ysclid=muwtm7yl04469166"
+  title="Как проходят уроки"
+allowfullscreen></iframe>
+</div>
+</section>
+
+<!-- Таймер -->
+
+ <section class="timer-block">
+ <h2>До конца осенней акции «−20% на всё»</h2>
+ <div id="timer" class="timer">
+<div><span id="t-days">00</span><small>дней</small></div>
+<div><span id="t-hours">00</span><small>часов</small></div>
+ <div><span id="t-mins">00</span><small>минут</small></div>
+ <div><span id="t-secs">00</span><small>секунд</small></div>
+</div>
+ </section>
+
+<!--Форма записи -->
+<section class="order" id="order">
+<h2>Записаться на пробный урок</h2>
+<form id="order-form" action="#" method="post">
+<label>Имя
+<input type="text" name="name" placeholder="Ваше имя" required />
+</label>
+<label>Телефон
+<input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required />
+</label>
+
+<label>Услуга
+<select name="service">
+<option>Основы фотографии</option>
+<option>Портретная съёмка</option>
+<option>Пейзажная фотография</option>
+<option>Натюрморт+Макросъёмка</option>
+<option>Репортаж+Архитектурная съёмка</option>
+</select>
+</label>
+
+<label>Комментарий
+<textarea name="comment" rows="3" placeholder="Ваши пожелания"></textarea>
+</label>
+<button type="submit" class="btn">Отправить заявку</button>
+</form>
+<p id="form-message" class="form-message"></p>
+</section>
+</div>
+
+<!-- Боковая колонка -->
+<div id="side-column">
+  <h2>Немного о преподавателях</h2>
+
+  <p><strong>Каренина Анна Аркадьевна</strong> — основы фотографии</p>
+  <p><strong>Аникин Алексей Александрович</strong> — пейзаж, натюрморт и макросъёмка</p>
+  <p><strong>Безухов Пьер Кириллович</strong> — репортаж и архитектурная съёмка</p>
+  <p><strong>Ларина Татьяна Дмитриевна</strong> — портретная съёмка</p>
+
+  <h2>Контакты</h2>
+  <p>Телефон: +7 (905) 389-18-89</p>
+  <p>E-mail: photo@course.ru</p>
+  <p>Адрес: г. Саранск, ул. Богдана Хмельницкого, 39</p>
+
+  <h2>Быстрая заявка</h2>
+  <form id="quick-form" action="#" method="post">
+    <label>Телефон
+      <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required />
+    </label>
+    <button type="submit" class="btn">Перезвоните мне</button>
+  </form>
+  <p id="quick-message" class="form-message"></p>
+</div>
+
+<div class="clear"></div>
+</div>
+<div id="hFooter"></div>
+</div>
+<div id="footer">© 2026 Фото.точка. Все права защищены.</div>
+<script src="script.js"></script>
+</body>
+</html>
