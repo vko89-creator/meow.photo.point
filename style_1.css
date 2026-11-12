@@ -554,6 +554,7 @@ form textarea:focus {
 /* Градиенты: радиальный на фоне, линейные на карточках и кнопках */
 body {
   background:
+    url("flowers.png") right 20px top 90px / min(560px, 90vw) auto no-repeat,
     radial-gradient(circle at 15% 0%, hsl(350, 70%, 20%) 0%, transparent 45%),
     radial-gradient(circle at 100% 100%, hsl(350, 75%, 14%) 0%, transparent 50%),
     var(--velvet-dark);
@@ -607,12 +608,11 @@ form input, form select, form textarea { transition: border-color .3s, box-shado
 
 /* ================= Версия 3 ================= */
 
-/* Фон: кружево в двух противоположных углах, букет; тёмный бордовый градиент (как раньше) */
+/* Фон: кружево в двух противоположных углах, букет анемонов; тёмный бордовый градиент (как раньше) */
 body {
   background:
     url("lace_corner.png") left top / min(420px, 60vw) auto no-repeat,
     url("lace_corner_br.png") right bottom / min(420px, 60vw) auto no-repeat,
-    url("flowers.png") right 20px top 90px / min(560px, 90vw) auto no-repeat,
     radial-gradient(circle at 15% 0%, hsl(350, 70%, 20%) 0%, transparent 45%),
     radial-gradient(circle at 100% 100%, hsl(350, 75%, 14%) 0%, transparent 50%),
     var(--velvet-dark);
@@ -634,16 +634,6 @@ body {
 
 /* Цветы на блоках — копия фона в уменьшенном виде (в углу) */
 section, #side-column { position: relative; overflow: hidden; }
-section::after, #side-column::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    url("red_hibiscus.png") right 10px top 8px / 64px auto no-repeat,
-    url("red_lily.png") left 8px bottom 6px / 64px auto no-repeat;
-  opacity: .95;
-  pointer-events: none;
-}
 
 section > *, #side-column > * { position: relative; z-index: 1; }
 
@@ -724,3 +714,44 @@ section h2::after, #side-column h2::after {
 html { scroll-behavior: smooth; }
 section { scroll-margin-top: 20px; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+
+/* ================= Кружево в шапке, бантики, конверт ================= */
+
+/* Шапка: длинное кружево над меню */
+#header { position: relative; overflow: hidden; padding: 30px 18px 8px; }
+#header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 34px;
+  background: url("garland_tile.png") left top / auto 34px repeat-x;
+  opacity: .95;
+  pointer-events: none;
+}
+
+/* Бантик «заколот» на первой букве каждого заголовка */
+
+/* Конверт: в пустом месте под боковой колонкой, небольшой */
+
+/* Кнопки шапки покрупнее */
+#logo { height: 44px; line-height: 44px; font-size: 22px; padding: 0 26px; }
+#main-nav a { font-size: 17px; padding: 6px 20px; }
+
+/* «Курсы» заходит на кружево; кружево лежит под кнопками */
+#logo { position: relative; z-index: 1; margin-top: -20px; }
+#main-nav { position: relative; z-index: 1; }
+
+/* Письмо: текст по центру листа, бумага темнее */
+
+/* Небольшие красные цветы в углах блоков */
+section::after, #side-column::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    url("red_hibiscus.png") right 10px top 8px / 64px auto no-repeat,
+    url("red_lily.png") left 8px bottom 6px / 64px auto no-repeat;
+  opacity: .95;
+  pointer-events: none;
+}
